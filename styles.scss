@@ -1,0 +1,13 @@
+//Mobile First
+
+header{
+    nav{
+        .navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0%;
+        }
+    }
+}
