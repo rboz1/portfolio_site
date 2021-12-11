@@ -35,8 +35,8 @@
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 2fr 3fr 1fr;
-      grid-template-rows: 2fr 3fr 1fr;
+  -ms-grid-rows: 2fr 2fr 1fr;
+      grid-template-rows: 2fr 2fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "about" "projects" "techstack";
@@ -46,6 +46,19 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: about;
+  padding: 5%;
+}
+
+.grid-container main article h2 {
+  color: #7F00FF;
+}
+
+.grid-container main article .about-me {
+  line-height: 1.5rem;
+}
+
+.grid-container main article .curr-learn {
+  padding-top: 5%;
 }
 
 .grid-container main aside {
@@ -73,9 +86,21 @@
   height: 55px;
 }
 
-.grid-container main section {
+.grid-container main .splide {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: projects;
+}
+
+.grid-container main .splide ul {
+  padding: 0%;
+}
+
+.grid-container main .splide ul img {
+  width: 100%;
+}
+
+.grid-container main .splide .splide__arrows {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */

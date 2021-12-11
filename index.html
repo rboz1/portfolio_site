@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/node_modules/splide/dist/css/splide.min.css">
+    <script src="/node_modules/splide/dist/js/splide.min.js"></script>
+    <script src="index.js"></script>
     <title>Rachel Bozadjian</title>
 </head>
 <body class="grid-container"> 
@@ -21,10 +24,10 @@
     <main>
         <article>
             <h2>Hi I'm Rachel</h2>
-            <p>
+            <p class="about-me">
                 I'm a self-taught front end developer at the intersection of design, technology, and science. I prioritize clean, organized code while building streamlined software that is both easily navigable and aesthetically pleasing.
             </p>
-            <p>Currently experimenting with: React</p>            
+            <p class="curr-learn">Currently experimenting with: React</p>            
         </article>
         <aside>
             <ul class="techstack">
@@ -35,14 +38,19 @@
                 <li><img src="/images/React-icon.svg" alt="react logo"></li>
             </ul>
         </aside>
-        <section>
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-            </ul>
-        </section>
+
+        <div class="splide">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide"><a href="https://rboz1.github.io/countdown-app/"><img src="/images/screenshot_countdown.jpg" alt=""></a></li>
+                      <li class="splide__slide"><a href="https://rboz1.github.io/furniture_webpage/"><img src="/images/screenshot_furniture.jpg" alt=""></a></li>
+                      <li class="splide__slide"><a href="https://rboz1.github.io/ghibli_films/"><img src="/images/screenshot_ghibli.jpg" alt=""></a></li>
+                      <li class="splide__slide"><a href="https://rboz1.github.io/SCSS_practice/"><img src="/images/screenshot_orange.jpg" alt=""></a></li>
+
+                  </ul>
+            </div>
+          </div>
+
     </main>
     <footer></footer>
 </body>

@@ -1,3 +1,6 @@
+
+$violet: #7F00FF;
+
 //Mobile First
 
 .grid-container{
@@ -23,7 +26,7 @@
     main{
         grid-area: main;
         display: grid;
-        grid-template-rows: 2fr 3fr 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
         grid-template-columns: 1fr;
         grid-template-areas: 
         "about"
@@ -32,6 +35,19 @@
 
         article{
             grid-area: about;
+            padding: 5%;
+
+            h2{
+                color: $violet;
+            }
+            
+            .about-me{
+                line-height: 1.5rem;
+            }
+
+            .curr-learn{
+                padding-top: 5%;
+            }
         }
 
         aside{
@@ -50,9 +66,21 @@
             }
         }
 
-        section{
+        .splide{
             grid-area: projects;
+            ul{
+                padding: 0%;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .splide__arrows{
+                display: none;
+            }
         }
+
     }
 
 }
