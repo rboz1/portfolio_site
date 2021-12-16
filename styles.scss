@@ -52,6 +52,7 @@ $violet: #7F00FF;
 
         aside{
             grid-area: techstack;
+            align-self: center;
             
             .techstack{
                 display: flex;
