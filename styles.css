@@ -125,8 +125,8 @@
     grid-area: main;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr, 2fr;
-        grid-template-columns: 1fr, 2fr;
+    -ms-grid-columns: 1fr, 1fr;
+        grid-template-columns: 1fr, 1fr;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
         grid-template-areas: "about projects" "techstack projects";
@@ -146,6 +146,9 @@
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
     grid-area: projects;
+  }
+  .grid-container main .splide ul img {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

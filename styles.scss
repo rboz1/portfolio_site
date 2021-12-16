@@ -115,7 +115,7 @@ $violet: #7F00FF;
             grid-area: main;
 
             display: grid;
-            grid-template-columns: 1fr, 2fr;
+            grid-template-columns: 1fr, 1fr;
             grid-template-rows: repeat(2,1fr);
             grid-template-areas: 
             "about projects"
@@ -132,6 +132,12 @@ $violet: #7F00FF;
 
             .splide{
                 grid-area: projects;
+
+                ul{
+                    img{
+                        width: 100%;
+                    }
+                }
             }
         }
     }
