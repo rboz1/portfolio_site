@@ -129,12 +129,14 @@
         grid-template-columns: 1fr, 1fr;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: "about projects" "techstack projects";
+        grid-template-areas: "about projects" "techstack . ";
   }
   .grid-container main article {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
+    width: 500px;
+    padding: 25%;
   }
   .grid-container main aside {
     -ms-grid-row: 2;
@@ -143,12 +145,13 @@
   }
   .grid-container main .splide {
     -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
     -ms-grid-column: 2;
     grid-area: projects;
+    width: 75%;
+    height: 100%;
   }
-  .grid-container main .splide ul img {
-    width: 100%;
+  .grid-container main .splide .splide__arrows {
+    display: inline;
   }
 }
 /*# sourceMappingURL=styles.css.map */

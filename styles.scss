@@ -119,10 +119,13 @@ $violet: #7F00FF;
             grid-template-rows: repeat(2,1fr);
             grid-template-areas: 
             "about projects"
-            "techstack projects";
+            "techstack . ";
 
             article{
                 grid-area: about;
+
+                width: 500px;
+                padding: 25%;
             }
 
             aside{
@@ -132,11 +135,11 @@ $violet: #7F00FF;
 
             .splide{
                 grid-area: projects;
+                width: 75%;
+                height: 100%;
 
-                ul{
-                    img{
-                        width: 100%;
-                    }
+                .splide__arrows{
+                    display: inline;
                 }
             }
         }
