@@ -1,77 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500&display=swap");
-.grid-container {
+body {
   margin: 0%;
   background-color: #F4F4F4;
+}
+
+body main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr, 3fr;
-      grid-template-rows: 1fr, 3fr;
+  -ms-grid-rows: 1fr, 2fr, 3fr;
+      grid-template-rows: 1fr, 2fr, 3fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      grid-template-areas: "navigation" "main";
+      grid-template-areas: "about" "techstack" "projects";
 }
 
-.grid-container header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: navigation;
-}
-
-.grid-container header nav .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  list-style: none;
-  margin-top: 0%;
-  padding: 2% 0% 0% 2%;
-  background-color: #EFEEEE;
-}
-
-.grid-container header nav .navbar img {
-  width: 75%;
-}
-
-.grid-container main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: main;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 3fr 0.5fr;
-      grid-template-rows: 1fr 3fr 0.5fr;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-      grid-template-areas: "about" "projects" "techstack";
-}
-
-.grid-container main article {
+body main article {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: about;
-  padding: 5%;
+  padding: 10%;
   background-color: #EFEEEE;
 }
 
-.grid-container main article h2 {
+body main article h2 {
   color: #7F00FF;
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 500;
 }
 
-.grid-container main article .about-me {
+body main article .about-me {
   line-height: 1.5rem;
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 400;
 }
 
-.grid-container main article div {
+body main aside {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: techstack;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 10%;
+}
+
+body main aside div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,24 +55,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 5%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.grid-container main article div .curr-learn {
+body main aside div .curr-learn {
   font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  padding-left: 5%;
 }
 
-.grid-container main aside {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: techstack;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+body main aside div .react-logo {
+  -webkit-animation: bounce 5s ease 2s forwards;
+          animation: bounce 5s ease 2s forwards;
 }
 
-.grid-container main aside .techstack {
+body main aside .techstack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,25 +78,35 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   list-style: none;
-  padding: 0%;
+  padding: 5% 0% 0% 5%;
 }
 
-.grid-container main aside .techstack img {
-  height: 55px;
+body main aside .techstack .sass-logo {
+  justify-self: flex-end;
 }
 
-.grid-container main .projects {
-  -ms-grid-row: 2;
+body main aside .techstack .python-logo {
+  -webkit-animation: nudged 2s ease 4950ms forwards;
+          animation: nudged 2s ease 4950ms forwards;
+}
+
+body main aside .techstack li {
+  padding: 3%;
+}
+
+body main aside .techstack li img {
+  height: 70px;
+}
+
+body main .projects {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: projects;
   margin: 2%;
 }
 
-.grid-container main .projects ul {
+body main .projects ul {
   padding: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,31 +117,90 @@
           flex-direction: column;
 }
 
-.grid-container main .projects ul li {
+body main .projects ul li {
   padding: 2%;
 }
 
-.grid-container main .projects ul li img {
+body main .projects ul li img {
   width: 100%;
   border-radius: 25px;
   -webkit-box-shadow: 5px 5px 5px #7F00FF;
           box-shadow: 5px 5px 5px #7F00FF;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .grid-container main {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: main;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
   }
-  .grid-container main .splide {
-    padding-bottom: 5%;
+  10% {
+    -webkit-transform: translate(0px, 20px);
+            transform: translate(0px, 20px);
+  }
+  20% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+  }
+  30% {
+    -webkit-transform: translate(0px, 20px);
+            transform: translate(0px, 20px);
+  }
+  40% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 120px);
+            transform: translate(0px, 120px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+  }
+  10% {
+    -webkit-transform: translate(0px, 20px);
+            transform: translate(0px, 20px);
+  }
+  20% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+  }
+  30% {
+    -webkit-transform: translate(0px, 20px);
+            transform: translate(0px, 20px);
+  }
+  40% {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 120px);
+            transform: translate(0px, 120px);
+  }
+}
+
+@-webkit-keyframes nudged {
+  50% {
+    -webkit-transform: translate(0px, 100px);
+            transform: translate(0px, 100px);
+  }
+  100% {
+    -webkit-transform: translate(-130px, 100px);
+            transform: translate(-130px, 100px);
+  }
+}
+
+@keyframes nudged {
+  50% {
+    -webkit-transform: translate(0px, 100px);
+            transform: translate(0px, 100px);
+  }
+  100% {
+    -webkit-transform: translate(-130px, 100px);
+            transform: translate(-130px, 100px);
   }
 }
 
