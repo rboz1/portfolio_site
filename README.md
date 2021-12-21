@@ -15,7 +15,7 @@
 ## Overview
 
 ### Links
-[Active Site Link](https://rboz1.github.io/portfolio_site/#)
+[Active Site Link](https://rboz1.github.io/portfolio_site/)
 
 ### Screenshot
 
