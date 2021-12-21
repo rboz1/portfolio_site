@@ -38,10 +38,6 @@
   width: 75%;
 }
 
-.grid-container header nav .navbar img svg {
-  fill: blue;
-}
-
 .grid-container main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -75,14 +71,23 @@
   font-weight: 400;
 }
 
-.grid-container main article .curr-learn {
+.grid-container main article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 5%;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 400;
 }
 
-.grid-container main article .curr-learn img {
-  width: 20%;
+.grid-container main article div .curr-learn {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
 }
 
 .grid-container main aside {

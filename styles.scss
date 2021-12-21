@@ -31,10 +31,6 @@ $textblock-grey:#EFEEEE;
 
                 img{
                     width: 75%;
-                    
-                    svg{
-                        fill: blue;
-                    }
                 }
             }
         }
@@ -66,13 +62,15 @@ $textblock-grey:#EFEEEE;
                 font-weight: 400;
             }
 
-            .curr-learn{
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 padding-top: 5%;
-                font-family: $font;
-                font-weight: 400;
 
-                img{
-                    width: 20%;
+                .curr-learn{
+                    font-family: $font;
+                    font-weight: 400;
                 }
             }
         }
