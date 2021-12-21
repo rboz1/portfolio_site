@@ -1,17 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500&display=swap");
 .grid-container {
+  margin: 0%;
+  background-color: #F4F4F4;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr, 3fr;
       grid-template-rows: 1fr, 3fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      grid-template-areas: "navbar" "main";
+      grid-template-areas: "navigation" "main";
 }
 
 .grid-container header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: navbar;
+  grid-area: navigation;
 }
 
 .grid-container header nav .navbar {
@@ -22,11 +25,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   list-style: none;
-  padding-left: 0%;
+  margin-top: 0%;
+  padding: 2% 0% 0% 2%;
+  background-color: #EFEEEE;
+}
+
+.grid-container header nav .navbar img {
+  width: 75%;
+}
+
+.grid-container header nav .navbar img svg {
+  fill: blue;
 }
 
 .grid-container main {
@@ -35,8 +48,8 @@
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 2fr 2fr 1fr;
-      grid-template-rows: 2fr 2fr 1fr;
+  -ms-grid-rows: 1fr 3fr 0.5fr;
+      grid-template-rows: 1fr 3fr 0.5fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "about" "projects" "techstack";
@@ -47,18 +60,29 @@
   -ms-grid-column: 1;
   grid-area: about;
   padding: 5%;
+  background-color: #EFEEEE;
 }
 
 .grid-container main article h2 {
   color: #7F00FF;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 500;
 }
 
 .grid-container main article .about-me {
   line-height: 1.5rem;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
 }
 
 .grid-container main article .curr-learn {
   padding-top: 5%;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+}
+
+.grid-container main article .curr-learn img {
+  width: 20%;
 }
 
 .grid-container main aside {
@@ -89,22 +113,50 @@
   height: 55px;
 }
 
-.grid-container main .splide {
+.grid-container main .projects {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: projects;
+  margin: 2%;
 }
 
-.grid-container main .splide ul {
+.grid-container main .projects ul {
   padding: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.grid-container main .splide ul img {
+.grid-container main .projects ul li {
+  padding: 2%;
+}
+
+.grid-container main .projects ul li img {
   width: 100%;
+  border-radius: 25px;
+  -webkit-box-shadow: 5px 5px 5px #7F00FF;
+          box-shadow: 5px 5px 5px #7F00FF;
 }
 
-.grid-container main .splide .splide__arrows {
-  display: none;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .grid-container main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .grid-container main .splide {
+    padding-bottom: 5%;
+  }
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -113,10 +165,12 @@
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: 1fr, 2fr;
         grid-template-rows: 1fr, 2fr;
-        grid-template-areas: " . navbar" "main main";
+        grid-template-areas: ". navbar" "main main";
   }
   .grid-container header {
-    grid-area: "navbar";
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: navbar;
   }
   .grid-container main {
     -ms-grid-row: 2;
@@ -125,18 +179,18 @@
     grid-area: main;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr, 1fr;
-        grid-template-columns: 1fr, 1fr;
+    -ms-grid-columns: 3fr, 1fr;
+        grid-template-columns: 3fr, 1fr;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: "about projects" "techstack . ";
+        grid-template-areas: "about projects" "techstack .";
   }
   .grid-container main article {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
-    width: 500px;
-    padding: 25%;
+    width: 700px;
+    padding: 5%;
   }
   .grid-container main aside {
     -ms-grid-row: 2;
@@ -147,10 +201,8 @@
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: projects;
-    width: 75%;
-    height: 100%;
   }
-  .grid-container main .splide .splide__arrows {
+  .grid-container main .splide .splide__track .splide__list {
     display: inline;
   }
 }
