@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500&display=swap");
 body {
+  background-color: #F9F9F9;
   margin: 0%;
   display: -ms-grid;
   display: grid;
@@ -68,7 +69,11 @@ body main .icons ul svg {
   height: 50px;
 }
 
-body main .icons ul .LI-icon {
+body main .icons ul svg:hover {
+  fill: #7F00FF;
+}
+
+body main .icons ul .linked-icon {
   height: 55px;
 }
 
@@ -93,7 +98,7 @@ body main .projects ul {
 }
 
 body main .projects ul li {
-  padding: 2%;
+  padding: 1%;
 }
 
 body main .projects ul li img {
@@ -105,6 +110,13 @@ body main .projects ul li:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  body main article h2 {
+    font-size: 2rem;
+  }
+  body main article .about-me {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
   body main .projects ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -145,6 +157,8 @@ body main .projects ul li:hover {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
+    position: relative;
+    top: 10%;
   }
   html main .icons, body main .icons {
     -ms-grid-row: 1;
@@ -163,6 +177,8 @@ body main .projects ul li:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+    top: 10%;
   }
   html main .icons ul, body main .icons ul {
     width: 100%;
@@ -176,9 +192,6 @@ body main .projects ul li:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-  }
-  html main .icons ul svg:hover, body main .icons ul svg:hover {
-    fill: #7F00FF;
   }
   html main .projects, body main .projects {
     -ms-grid-row: 1;
@@ -226,6 +239,94 @@ body main .projects ul li:hover {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
+    position: relative;
+    top: 10%;
+  }
+  html main .icons, body main .icons {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: about;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    top: 10%;
+  }
+  html main .icons ul, body main .icons ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  html main .projects, body main .projects {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: projects;
+  }
+  html main .projects ul, body main .projects ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  html main .projects li, body main .projects li {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  html main, body main {
+    display: -ms-grid;
+    display: grid;
+    height: 100%;
+    -ms-grid-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "about projects";
+  }
+  html main article, body main article {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: about;
+  }
+  html main article h2, body main article h2 {
+    font-size: 3rem;
+  }
+  html main article .about-me, body main article .about-me {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
   html main .icons, body main .icons {
     -ms-grid-row: 1;
@@ -257,6 +358,94 @@ body main .projects ul li:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    position: relative;
+    bottom: 10%;
+  }
+  html main .projects, body main .projects {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: projects;
+  }
+  html main .projects ul, body main .projects ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  html main .projects li, body main .projects li {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  html main, body main {
+    display: -ms-grid;
+    display: grid;
+    height: 100%;
+    -ms-grid-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "about projects";
+  }
+  html main article, body main article {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: about;
+  }
+  html main article h2, body main article h2 {
+    font-size: 3rem;
+  }
+  html main article .about-me, body main article .about-me {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  html main .icons, body main .icons {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: about;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  html main .icons ul, body main .icons ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: relative;
+    bottom: 10%;
   }
   html main .projects, body main .projects {
     -ms-grid-row: 1;

@@ -5,6 +5,7 @@ $violet: #7F00FF;
 
 //Mobile
 body{
+    background-color: #F9F9F9;
     margin: 0%;
     display: grid;
     grid-template-columns: 1fr;
@@ -52,7 +53,10 @@ body{
                 svg{
                     height: 50px;
                 }
-                .LI-icon{
+                svg:hover{
+                    fill: $violet;
+                }
+                .linked-icon{
                     height: 55px;
                 }
             }
@@ -68,7 +72,7 @@ body{
                 list-style: none;
 
                 li{
-                    padding: 2%;
+                    padding: 1%;
                     img{
                         width: 100%;
                     }
@@ -92,6 +96,16 @@ body{
 
     body{
         main{
+            article{
+                h2{
+                    font-size: 2rem;
+                }
+
+                .about-me{
+                    font-size: 1.3rem;
+                    line-height: 1.7rem;
+                }
+            }
             .projects{
                 ul{
                     display: flex;
@@ -129,6 +143,8 @@ body{
 
             article{
                 grid-area: about;
+                position: relative;
+                top: 10%;
             }
 
             .icons{
@@ -139,15 +155,15 @@ body{
                 justify-content: center;
                 align-items: center;
 
+                position: relative;
+                top: 10%;
+
                 ul{
                     width: 100%;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-evenly;
 
-                    svg:hover{
-                        fill: $violet;
-                    }
                 }
 
             }
@@ -193,7 +209,8 @@ body{
 
             article{
                 grid-area: about;
-
+                position: relative;
+                top: 10%;
             }
 
             .icons{
@@ -204,6 +221,8 @@ body{
                 justify-content: center;
                 align-items: center;
 
+                position: relative;
+                top: 10%;
                 ul{
                     width: 100%;
                     display: flex;
@@ -234,3 +253,143 @@ body{
 }
 
 //Larger screens
+//Non-retina screens
+@media only screen 
+  and (min-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    html,body{
+        height: 100%;
+        width: 100%;
+        display: block;
+        main{
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 100%;
+            grid-template-areas: 
+            "about projects";
+
+            article{
+                grid-area: about;
+
+                h2{
+                    font-size: 3rem;
+                }
+
+                .about-me{
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+
+            }
+
+            .icons{
+                grid-area: about;
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                ul{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    position: relative;
+                    bottom: 10%;
+                }
+
+            }
+
+            .projects{
+                grid-area: projects;
+
+                ul{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                li{
+                    width: 45%;
+                }
+            }
+
+        }
+    }
+
+  }
+
+
+
+//Retina screens
+@media only screen 
+  and (min-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    html,body{
+        height: 100%;
+        width: 100%;
+        display: block;
+        main{
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 100%;
+            grid-template-areas: 
+            "about projects";
+
+            article{
+                grid-area: about;
+
+                h2{
+                    font-size: 3rem;
+                }
+
+                .about-me{
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+
+            }
+
+            .icons{
+                grid-area: about;
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                ul{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    position: relative;
+                    bottom: 10%;
+                }
+
+            }
+
+            .projects{
+                grid-area: projects;
+
+                ul{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                li{
+                    width: 45%;
+                }
+            }
+
+        }
+    }
+
+  }
