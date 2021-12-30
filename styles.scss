@@ -1,91 +1,165 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500&display=swap');
-$font: 'Zen Maru Gothic', sans-serif;
-$violet: #7F00FF;
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@300;400&family=Montserrat:wght@300&display=swap');
+$header-font: 'Big Shoulders Stencil Text', cursive;
+$body-font: 'Montserrat', sans-serif;
+$cobalt: #4C00FF;
 
 //Mobile
 body{
-    background-color: #F9F9F9;
-    margin: 0%;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr, 1fr;
-    grid-area: 
-    "main"
-    "techstack";
-    main{
-        grid-area: main;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 2fr, 1fr, 4fr; 
-        grid-template-areas:
-        "about"
-        "icons"
-        "projects";
+    grid-template-rows: 1fr, 3fr;
+    grid-template-areas: 
+    "head" 
+    "main";
 
-        article{
-            grid-area: about;
-            padding: 10%;
-
-            h2{
-                color: $violet;
-                font-family: $font;
-                font-weight: 500;
+    header{
+        grid-area: head;
+        align-self: center;
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            opacity: 0.5;
+            .logo{
+                padding-left: 5%;
             }
-            
-            .about-me{
-                line-height: 1.5rem;
-                font-family: $font;
-                font-weight: 400;
-            }
-        }
-
-        .icons{
-            grid-area: icons;
             ul{
+                width: 50%;
                 list-style: none;
-                padding: 0;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
-                align-items: center;
 
-                svg{
-                    height: 50px;
+                li{
+                    font-family: $body-font;
+                    font-size: 0.9rem;
                 }
-                svg:hover{
-                    fill: $violet;
+
+                a{
+                    text-decoration: none;
+                    color: black;
                 }
-                .linked-icon{
-                    height: 55px;
+                a:hover{
+                    color: $cobalt;
                 }
             }
         }
-        .projects{
-            grid-area: projects;
-            margin: 2%;
-            margin-top: 5%;
-            ul{
-                padding: 0%;
+    }
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-rows: 86vh 3fr repeat(2,1fr);
+        row-gap: 2%;
+        grid-template-areas: 
+        "about"
+        "projects"
+        "stack"
+        "foot";
+
+        article{
+            grid-area: about;
+            height: 75%;
+            padding: 10%;
+            h2{
+                font-family: $header-font;
+                font-weight: 400;
+                font-size: 4.5rem;
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
+
+                .name{
+                    align-self: flex-end;
+                }
+            }
+            
+            .blurb{
+                line-height: 1.7rem;
+                font-family: $body-font;
+            }
+        }
+
+        #projects{
+            grid-area: projects;
+            h2{
+                font-family: $header-font;
+                text-align: center;
+            }
+            ul{
                 list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                width: 100%;
 
                 li{
-                    padding: 1%;
+                    padding-top: 5%;
+
                     img{
                         width: 100%;
                     }
                 }
+            }
+        }
+        .techstack{
+            grid-area: stack;
+            h2{
+                font-family: $header-font;
+                text-align: center;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-items: center;
 
-                li:hover{
-                    opacity: 0.5;
+                li{
+                    padding: 2%;
+                    img{
+                        width: 90px;
+                    }
+                    .small-logo{
+                        width: 110px;
+                    }
                 }
 
             }
         }
-
+        footer{
+            grid-area: foot;
+            align-self: flex-end;
+            position: sticky;
+            .icons{
+                h2{
+                    font-family: $header-font;
+                    text-align: center;
+                }
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: center;
+    
+                    svg{
+                        width: 30px;
+                    }
+                    .linked-icon{
+                        height: 30px;
+                    }
+                }
+            }
+    
+        }
     }
+
 }
 
 //Tablet
@@ -129,27 +203,20 @@ body{
   and (max-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
 
-    html,body{
-        height: 100%;
-        width: 100%;
-        display: block;
+    body{
         main{
-            display: grid;
-            height: 100%;
-            grid-template-columns: 1fr 1.5fr;
-            grid-template-rows: 100%;
-            grid-template-areas: 
-            "about projects";
-
             article{
                 grid-area: about;
                 position: relative;
                 top: 10%;
+
+                h2{
+                    font-size: 5rem;
+                }
             }
 
             .icons{
                 grid-area: about;
-                
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -166,22 +233,6 @@ body{
 
                 }
 
-            }
-
-            .projects{
-                grid-area: projects;
-                place-self: center;
-
-                ul{
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                li{
-                    width: 45%;
-                }
             }
 
         }
@@ -194,62 +245,6 @@ body{
   and (max-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
-
-    html,body{
-        height: 100%;
-        width: 100%;
-        display: block;
-        main{
-            display: grid;
-            height: 100%;
-            grid-template-columns: 1fr 1.5fr;
-            grid-template-rows: 100%;
-            grid-template-areas: 
-            "about projects";
-
-            article{
-                grid-area: about;
-                position: relative;
-                top: 10%;
-            }
-
-            .icons{
-                grid-area: about;
-                
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                position: relative;
-                top: 10%;
-                ul{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-
-                }
-
-            }
-
-            .projects{
-                grid-area: projects;
-
-                ul{
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                li{
-                    width: 45%;
-                }
-            }
-
-        }
-    }
 }
 
 //Larger screens
@@ -257,68 +252,7 @@ body{
 @media only screen 
   and (min-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
-    html,body{
-        height: 100%;
-        width: 100%;
-        display: block;
-        main{
-            display: grid;
-            height: 100%;
-            grid-template-columns: 1fr 1.5fr;
-            grid-template-rows: 100%;
-            grid-template-areas: 
-            "about projects";
 
-            article{
-                grid-area: about;
-
-                h2{
-                    font-size: 3rem;
-                }
-
-                .about-me{
-                    font-size: 1.5rem;
-                    line-height: 2.5rem;
-                }
-
-            }
-
-            .icons{
-                grid-area: about;
-                
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                ul{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    position: relative;
-                    bottom: 10%;
-                }
-
-            }
-
-            .projects{
-                grid-area: projects;
-
-                ul{
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                li{
-                    width: 45%;
-                }
-            }
-
-        }
-    }
 
   }
 
@@ -329,67 +263,5 @@ body{
   and (min-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
-    html,body{
-        height: 100%;
-        width: 100%;
-        display: block;
-        main{
-            display: grid;
-            height: 100%;
-            grid-template-columns: 1fr 1.5fr;
-            grid-template-rows: 100%;
-            grid-template-areas: 
-            "about projects";
-
-            article{
-                grid-area: about;
-
-                h2{
-                    font-size: 3rem;
-                }
-
-                .about-me{
-                    font-size: 1.5rem;
-                    line-height: 2.5rem;
-                }
-
-            }
-
-            .icons{
-                grid-area: about;
-                
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                ul{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    position: relative;
-                    bottom: 10%;
-                }
-
-            }
-
-            .projects{
-                grid-area: projects;
-
-                ul{
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                li{
-                    width: 45%;
-                }
-            }
-
-        }
-    }
 
   }
