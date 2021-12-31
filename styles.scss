@@ -23,7 +23,9 @@ body{
             justify-content: space-between;
             align-items: center;
             background-color: white;
-            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            width: 100%;
             .logo{
                 padding-left: 5%;
             }
@@ -52,7 +54,7 @@ body{
     main{
         grid-area: main;
         display: grid;
-        grid-template-rows: 86vh 3fr repeat(2,1fr);
+        grid-template-rows: 95vh 3fr repeat(2,1fr);
         row-gap: 2%;
         grid-template-areas: 
         "about"
@@ -134,7 +136,6 @@ body{
         footer{
             grid-area: foot;
             align-self: flex-end;
-            position: sticky;
             .icons{
                 h2{
                     font-family: $header-font;
@@ -169,27 +170,71 @@ body{
   and (-webkit-min-device-pixel-ratio: 1) {
 
     body{
+        header{
+            nav{
+                ul{
+                    li{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
         main{
             article{
                 h2{
-                    font-size: 2rem;
+                    font-size: 5rem;
+                    .name{
+                        margin-right: 40%;
+                    }
                 }
-
-                .about-me{
-                    font-size: 1.3rem;
-                    line-height: 1.7rem;
+                .blurb{
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
                 }
             }
-            .projects{
+            #projects{
+                h2{
+                    font-size: 2rem;
+                    margin-bottom: 10%;
+                }
                 ul{
+                    padding: 0;
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
-                }
 
-                li{
-                    width: 45%;
+                    li{
+                        width: 45%;
+                        padding: 1%;
+                    }
+                }
+            }
+            .techstack{
+                h2{
+                    font-size: 2rem;
+                }
+            }
+            footer{
+                .icons{
+                    h2{
+                        font-size: 2rem;
+                    }
+                    ul{
+                        justify-content: center;
+                
+                        li{
+                            padding: 2%;
+                        
+                            svg{
+                                width: 40px;
+                            }
+                            .linked-icon{
+                                height: 45px;
+                            }
+
+                        }
+                    }
                 }
             }
         }

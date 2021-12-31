@@ -34,7 +34,9 @@ body header nav {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
-  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 body header nav .logo {
@@ -76,8 +78,8 @@ body main {
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 86vh 3fr (1fr)[2];
-      grid-template-rows: 86vh 3fr repeat(2, 1fr);
+  -ms-grid-rows: 95vh 3fr (1fr)[2];
+      grid-template-rows: 95vh 3fr repeat(2, 1fr);
   row-gap: 2%;
       grid-template-areas: "about" "projects" "stack" "foot";
 }
@@ -194,8 +196,6 @@ body main footer {
   grid-area: foot;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 body main footer .icons h2 {
@@ -230,14 +230,25 @@ body main footer .icons ul .linked-icon {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  body header nav ul li {
+    font-size: 1.1rem;
+  }
   body main article h2 {
+    font-size: 5rem;
+  }
+  body main article h2 .name {
+    margin-right: 40%;
+  }
+  body main article .blurb {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  body main #projects h2 {
     font-size: 2rem;
+    margin-bottom: 10%;
   }
-  body main article .about-me {
-    font-size: 1.3rem;
-    line-height: 1.7rem;
-  }
-  body main .projects ul {
+  body main #projects ul {
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -252,8 +263,29 @@ body main footer .icons ul .linked-icon {
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .projects li {
+  body main #projects ul li {
     width: 45%;
+    padding: 1%;
+  }
+  body main .techstack h2 {
+    font-size: 2rem;
+  }
+  body main footer .icons h2 {
+    font-size: 2rem;
+  }
+  body main footer .icons ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body main footer .icons ul li {
+    padding: 2%;
+  }
+  body main footer .icons ul li svg {
+    width: 40px;
+  }
+  body main footer .icons ul li .linked-icon {
+    height: 45px;
   }
 }
 
