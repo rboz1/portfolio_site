@@ -92,7 +92,7 @@ body main article {
   padding: 10%;
 }
 
-body main article h2 {
+body main article h1 {
   font-family: "Big Shoulders Stencil Text", cursive;
   font-weight: 400;
   font-size: 4.5rem;
@@ -108,7 +108,7 @@ body main article h2 {
           align-items: flex-start;
 }
 
-body main article h2 .name {
+body main article h1 .name {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -233,10 +233,10 @@ body main footer .icons ul .linked-icon {
   body header nav ul li {
     font-size: 1.1rem;
   }
-  body main article h2 {
+  body main article h1 {
     font-size: 5rem;
   }
-  body main article h2 .name {
+  body main article h1 .name {
     margin-right: 40%;
   }
   body main article .blurb {
@@ -290,48 +290,99 @@ body main footer .icons ul .linked-icon {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr, 3fr;
+        grid-template-columns: 1fr, 3fr;
+    -ms-grid-rows: 1fr, 3fr;
+        grid-template-rows: 1fr, 3fr;
+        grid-template-areas: "head head"  "main main";
+  }
+  body header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: head;
+  }
+  body main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 1fr, 1fr (1fr)[2];
+        grid-template-rows: 1fr, 1fr repeat(2, 1fr);
+    row-gap: 0;
+        grid-template-areas: "about . " "projects projects" ". stack" "foot . ";
+  }
   body main article {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
-    position: relative;
-    top: 10%;
   }
-  body main article h2 {
-    font-size: 5rem;
-  }
-  body main .icons {
-    -ms-grid-row: 1;
+  body main #projects {
+    -ms-grid-row: 2;
     -ms-grid-column: 1;
-    grid-area: about;
+    -ms-grid-column-span: 2;
+    grid-area: projects;
+  }
+  body main #projects h2 {
+    font-size: 3rem;
+    padding-bottom: 5%;
+  }
+  body main #projects ul {
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: relative;
-    top: 10%;
   }
-  body main .icons ul {
-    width: 100%;
+  body main #projects ul li {
+    width: 45%;
+    padding: 1%;
+  }
+  body main .techstack {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: stack;
+  }
+  body main .techstack h2 {
+    font-size: 3rem;
+  }
+  body main .techstack ul {
+    list-style: none;
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main footer {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: foot;
   }
 }
 /*# sourceMappingURL=styles.css.map */
