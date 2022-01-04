@@ -35,7 +35,6 @@ body header nav {
           align-items: center;
   background-color: white;
   position: fixed;
-  top: 0;
   width: 100%;
 }
 
@@ -305,6 +304,10 @@ body main footer .icons ul .linked-icon {
     -ms-grid-column-span: 2;
     grid-area: head;
   }
+  body header nav ul {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   body main {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -312,26 +315,42 @@ body main footer .icons ul .linked-icon {
     grid-area: main;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 1fr, 1fr (1fr)[2];
-        grid-template-rows: 1fr, 1fr repeat(2, 1fr);
+    -ms-grid-columns: (2fr)[2] 50px;
+        grid-template-columns: repeat(2, 2fr) 50px;
+    -ms-grid-rows: 100vh 1fr 15%;
+        grid-template-rows: 100vh 1fr 15%;
     row-gap: 0;
-        grid-template-areas: "about . " "projects projects" ". stack" "foot . ";
+        grid-template-areas: "about . side-nav" "projects projects projects" "stack stack stack";
   }
   body main article {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: about;
   }
+  body main article h1 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body main article h1 .name {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 10%;
+  }
+  body main article .blurb {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
   body main #projects {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
+    -ms-grid-column-span: 3;
     grid-area: projects;
   }
   body main #projects h2 {
     font-size: 3rem;
+    padding-top: 1%;
     padding-bottom: 5%;
   }
   body main #projects ul {
@@ -354,9 +373,13 @@ body main footer .icons ul .linked-icon {
     width: 45%;
     padding: 1%;
   }
+  body main #projects ul li:hover {
+    opacity: 0.5;
+  }
   body main .techstack {
     -ms-grid-row: 3;
-    -ms-grid-column: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-area: stack;
   }
   body main .techstack h2 {
@@ -372,17 +395,39 @@ body main footer .icons ul .linked-icon {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
   body main footer {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    grid-area: foot;
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: side-nav;
+    height: 100%;
+  }
+  body main footer .icons {
+    height: 50%;
+  }
+  body main footer .icons #contact {
+    display: none;
+  }
+  body main footer .icons ul {
+    position: fixed;
+    margin: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main footer .icons ul li a svg:hover {
+    fill: #4C00FF;
   }
 }
 /*# sourceMappingURL=styles.css.map */

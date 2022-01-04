@@ -17,6 +17,7 @@ body{
     header{
         grid-area: head;
         align-self: center;
+        
         nav{
             display: flex;
             flex-direction: row;
@@ -24,8 +25,8 @@ body{
             align-items: center;
             background-color: white;
             position: fixed;
-            top: 0;
             width: 100%;
+
             .logo{
                 padding-left: 5%;
             }
@@ -259,23 +260,38 @@ body{
 
         header{
             grid-area: head;
+            nav{
+                ul{
+                    justify-content: space-around;
+                }
+            }
         }
 
         main{
             grid-area: main;
             display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-template-rows: 1fr, 1fr repeat(2, 1fr);
+            grid-template-columns: repeat(2,2fr) 50px;
+            grid-template-rows: 100vh 1fr 15%;
             row-gap: 0;
             grid-template-areas: 
-            "about . "
-            "projects projects"
-            ". stack"
-            "foot . ";
+            "about . side-nav"
+            "projects projects projects"
+            "stack stack stack";
 
             article{
                 grid-area: about;
-
+                h1{
+                    align-items: flex-start;
+    
+                    .name{
+                        align-self: center;
+                        margin-right: 10%;
+                    }
+                }
+                .blurb{
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
             }
 
             #projects{
@@ -283,6 +299,7 @@ body{
 
                 h2{
                     font-size: 3rem;
+                    padding-top: 1%;
                     padding-bottom: 5%;
                 }
 
@@ -296,6 +313,9 @@ body{
                     li{
                         width: 45%;
                         padding: 1%;
+                    }
+                    li:hover{
+                        opacity: 0.5;
                     }
                 }
 
@@ -312,12 +332,38 @@ body{
                     padding: 0;
                     display: flex;
                     flex-flow: row wrap;
-                    justify-content: space-between;
+                    justify-content: space-evenly;
                     align-items: center;
                 }
             }
             footer{
-                grid-area: foot;
+                grid-area: side-nav;
+                height: 100%;
+                .icons{
+
+                    height: 50%;
+
+                    #contact{
+                        display: none;
+                    }
+                    
+                    ul{
+                        position: fixed;
+                        margin: 0;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        li{
+                            a{
+                                svg:hover{
+                                    fill: $cobalt;
+                                }
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
