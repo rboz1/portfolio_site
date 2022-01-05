@@ -40,16 +40,10 @@ body header nav {
   z-index: 10;
 }
 
-body header nav .logo {
-  padding-left: 5%;
-}
-
-body header nav .logo a {
-  color: white;
-}
-
 body header nav ul {
-  width: 50%;
+  width: 60%;
+  height: 40px;
+  margin: 0;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,9 +52,11 @@ body header nav ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header nav ul li {
@@ -73,14 +69,18 @@ body header nav ul a {
   color: #E0115F;
 }
 
+body header nav .logo {
+  padding-left: 5%;
+}
+
 body main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 95vh 3fr (1fr)[2];
-      grid-template-rows: 95vh 3fr repeat(2, 1fr);
+  -ms-grid-rows: 90vh 3fr (1fr)[2];
+      grid-template-rows: 90vh 3fr repeat(2, 1fr);
   row-gap: 2%;
       grid-template-areas: "about" "projects" "stack" "foot";
 }
@@ -96,7 +96,7 @@ body main article {
 body main article h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 4.5rem;
+  font-size: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,6 +338,9 @@ body main footer .icons ul .linked-icon {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: head;
+  }
+  body header nav .logo {
+    padding-left: 2%;
   }
   body header nav ul {
     -ms-flex-pack: distribute;
