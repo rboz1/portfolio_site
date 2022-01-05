@@ -73,14 +73,18 @@ body header nav .logo {
   padding-left: 5%;
 }
 
+body header nav .logo a svg #fill {
+  fill: #E0115F;
+}
+
 body main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 90vh 3fr (1fr)[2];
-      grid-template-rows: 90vh 3fr repeat(2, 1fr);
+  -ms-grid-rows: 100vh 3fr (1fr)[2];
+      grid-template-rows: 100vh 3fr repeat(2, 1fr);
   row-gap: 2%;
       grid-template-areas: "about" "projects" "stack" "foot";
 }
@@ -156,11 +160,14 @@ body main #projects {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: projects;
+  background-color: #433145;
+  margin: 0 4% 4% 4%;
 }
 
 body main #projects h2 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  color: #B1A9B3;
 }
 
 body main #projects ul {
@@ -188,11 +195,14 @@ body main .techstack {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: stack;
+  background-color: #433145;
+  margin: 0 4% 4% 4%;
 }
 
 body main .techstack h2 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  color: #B1A9B3;
 }
 
 body main .techstack ul {
@@ -230,11 +240,14 @@ body main footer {
   grid-area: foot;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  background-color: #433145;
+  margin: 0 4% 0 4%;
 }
 
 body main footer .icons h2 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  color: #B1A9B3;
 }
 
 body main footer .icons ul {
@@ -257,6 +270,7 @@ body main footer .icons ul {
 
 body main footer .icons ul svg {
   width: 30px;
+  fill: #E0115F;
 }
 
 body main footer .icons ul .linked-icon {
@@ -426,6 +440,7 @@ body main footer .icons ul .linked-icon {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: stack;
+    margin: 0 4% 0 4%;
   }
   body main .techstack h2 {
     font-size: 3rem;
@@ -452,6 +467,7 @@ body main footer .icons ul .linked-icon {
     -ms-grid-column: 3;
     grid-area: side-nav;
     height: 100%;
+    background-color: #3A263D;
   }
   body main footer .icons {
     height: 50%;
