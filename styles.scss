@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 $body-font: 'Montserrat', sans-serif;
 $eggplant: #3A263D;
+$light-purple:#433145;
 $lighest-white:#E5E2E6;
 $light-white:#B1A9B3;
 $white: #978C9A;
@@ -45,38 +46,32 @@ body{
 
                 li{
                     font-family: $body-font;
-                    font-size: 0.9rem;
+                    font-size: 90%;
                 }
 
                 a{
                     text-decoration: none;
                     color: $fuschia;
                 }
+                a:hover{
+                    color: $white;
+                }
 
             }
             .logo{
                 padding-left: 5%;
-
-                a{
-                    svg{
-                        #fill{
-                            fill:$fuschia;
-                        }
-                    }
-                }
             }
         }
     }
     main{
         grid-area: main;
         display: grid;
-        grid-template-rows: 100vh 3fr repeat(2,1fr);
+        grid-template-rows: 100vh 3fr 1fr;
         row-gap: 2%;
         grid-template-areas: 
         "about"
         "projects"
-        "stack"
-        "foot";
+        "stack";
 
         article{
             grid-area: about;
@@ -111,15 +106,20 @@ body{
             ul{
                 list-style: none;
                 padding-top: 10%;
+                padding-left: 0;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-evenly;
 
                 li{
-                    width: 25%;
+                    width: 10%;
                     svg{
-                        width: 45%;
+                        width: 100%;
                         fill: $fuschia;
+                    }
+                    .linked-icon{
+                        width: px;
                     }
                 }
             }
@@ -127,7 +127,7 @@ body{
 
         #projects{
             grid-area: projects;
-            background-color: #433145;
+            background-color: $light-purple;
             margin: 0 4% 4% 4%;
             h2{
                 font-family: $body-font;
@@ -152,7 +152,7 @@ body{
         }
         .techstack{
             grid-area: stack;
-            background-color: #433145;
+            background-color: $light-purple;
             margin: 0 4% 4% 4%;
             h2{
                 font-family: $body-font;
@@ -168,7 +168,7 @@ body{
                 align-items: center;
 
                 li{
-                    padding: 2%;
+                    padding: 1%;
                     img{
                         width: 90px;
                     }
@@ -179,10 +179,9 @@ body{
 
             }
         }
-        footer{
-            grid-area: foot;
+        aside{ 
             align-self: flex-end;
-            background-color: #433145;
+            background-color: $light-purple;
             margin: 0 4% 0 4%;
             .icons{
                 h2{
@@ -202,8 +201,12 @@ body{
                         width: 30px;
                         fill: $fuschia;
                     }
+
+                    svg:hover{
+                        fill: $lighest-white;
+                    }
                     .linked-icon{
-                        height: 30px;
+                        width: 35px;
                     }
                 }
             }
@@ -213,10 +216,10 @@ body{
 
 }
 
-//Tablet
+//Small tablet
 @media only screen 
   and (min-width: 768px) 
-  and (max-width: 1200px) 
+  and (max-width: 1023px) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
     body{
@@ -224,7 +227,7 @@ body{
             nav{
                 ul{
                     li{
-                        font-size: 1.1rem;
+                        font-size: 1.3rem;
                     }
                 }
             }
@@ -240,6 +243,19 @@ body{
                 .blurb{
                     font-size: 1.5rem;
                     line-height: 2.2rem;
+                }
+
+                ul{
+                    li{
+                        a{
+                            svg{
+                                width: 75%;
+                            }
+                        }
+                    }
+                    .linked-icon{
+                        width: 50px;
+                    }
                 }
             }
             #projects{
@@ -265,7 +281,7 @@ body{
                     font-size: 2rem;
                 }
             }
-            footer{
+            aside{
                 .icons{
                     h2{
                         font-size: 2rem;
@@ -277,10 +293,7 @@ body{
                             padding: 2%;
                         
                             svg{
-                                width: 40px;
-                            }
-                            .linked-icon{
-                                height: 45px;
+                                width: 35px;
                             }
 
                         }
@@ -291,10 +304,102 @@ body{
     }
 }
 
+//Large tablet
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    body{
+        header{
+            nav{
+                ul{
+                    li{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+        main{
+            article{
+                h1{
+                    font-size: 6rem;
+                    .name{
+                        margin-right: 20%;
+                    }
+                }
+                h2{
+                    font-size: 3rem;
+                }
+                .blurb{
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+                ul{
+                    li{
+                        svg{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+            #projects{
+                h2{
+                    font-size: 2.5rem;
+                }
+            }
+            .techstack{
+                h2{
+                    font-size: 2.5rem;
+                }
+
+                ul{
+                    li{
+                       padding: 2% 7% 2% 7%;
+                        img{
+                            width: 120px;
+                        }
+                        .small-logo{
+                            width: 150px;
+                        }
+                    }
+                }
+            }
+            aside{
+                h2{
+                    font-size: 2.5rem;
+                }
+
+                .icons{
+
+                    ul{
+                        li{
+                            a{
+                                svg{
+                                    width: 50px;
+                                }
+                                .linked-icon{
+                                    width: 55px;
+                                }
+                            }
+
+                        }
+                    
+                    }
+                }
+                
+
+            }
+        }
+    }
+
+}
+
+
 //Laptop
 //Non-retina screens
 @media only screen 
-  and (min-width: 1200px) 
+  and (min-width: 1367px) 
   and (max-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
 
@@ -315,6 +420,10 @@ body{
                 }
                 ul{
                     justify-content: space-around;
+
+                    li{
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -326,24 +435,24 @@ body{
             grid-template-rows: 100vh 1fr 15%;
             row-gap: 0;
             grid-template-areas: 
-            "about . side-nav"
+            "about about side-nav"
             "projects projects projects"
             "stack stack stack";
 
             article{
                 grid-area: about;
-                padding: 5% 0 0 10%;
+                padding: 5% 20% 0 10%;
                 h1{
                     align-items: flex-start;
     
                     .name{
                         align-self: center;
-                        margin-right: 10%;
+                        margin-right: 40%;
                     }
                 }
 
                 h2{
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
                 .blurb{
                     font-size: 1.5rem;
@@ -399,7 +508,7 @@ body{
 
                 }
             }
-            footer{
+            aside{
                 grid-area: side-nav;
                 height: 100%;
                 background-color: $eggplant;
@@ -438,10 +547,149 @@ body{
 
 //Retina screens
 @media only screen 
-  and (min-width: 1200px) 
+  and (min-width: 1367px) 
   and (max-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
+    body{
+
+        display: grid;
+        grid-template-columns: 1fr, 3fr;
+        grid-template-rows: 1fr, 3fr;
+        grid-template-areas: 
+        "head head" 
+        "main main";
+
+        header{
+            grid-area: head;
+            nav{
+                .logo{
+                    padding-left: 2%;
+                }
+                ul{
+                    justify-content: space-around;
+
+                    li{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        main{
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(2,2fr) 50px;
+            grid-template-rows: 100vh 1fr 15%;
+            row-gap: 0;
+            grid-template-areas: 
+            "about about side-nav"
+            "projects projects projects"
+            "stack stack stack";
+
+            article{
+                grid-area: about;
+                padding: 5% 20% 0 10%;
+                h1{
+                    align-items: flex-start;
+    
+                    .name{
+                        align-self: center;
+                        margin-right: 40%;
+                    }
+                }
+
+                h2{
+                    font-size: 2.5rem;
+                }
+                .blurb{
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
+                ul{
+                    display: none;
+                }
+            }
+
+            #projects{
+                grid-area: projects;
+
+
+                h2{
+                    font-size: 3rem;
+                    padding-top: 1%;
+                    padding-bottom: 5%;
+                }
+
+                ul{
+                    padding: 0;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    li{
+                        width: 45%;
+                        padding: 1%;
+                    }
+                    li:hover{
+                        opacity: 0.5;
+                    }
+                }
+
+            }
+            .techstack{
+                grid-area: stack;
+                margin: 0 4% 0 4%;
+
+                h2{
+                    font-size: 3rem;
+                }
+
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                }
+            }
+            aside{
+                grid-area: side-nav;
+                height: 100%;
+                background-color: $eggplant;
+                .icons{
+
+                    height: 50%;
+
+                    #contact{
+                        display: none;
+                    }
+                    
+                    ul{
+                        position: fixed;
+                        margin: 0;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        li{
+                            a{
+                                svg{
+                                    fill: $fuschia;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
 }
 
 //Larger screens
@@ -449,8 +697,145 @@ body{
 @media only screen 
   and (min-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
+    body{
+
+        display: grid;
+        grid-template-columns: 1fr, 3fr;
+        grid-template-rows: 1fr, 3fr;
+        grid-template-areas: 
+        "head head" 
+        "main main";
+
+        header{
+            grid-area: head;
+            nav{
+                .logo{
+                    padding-left: 2%;
+                }
+                ul{
+                    justify-content: space-around;
+
+                    li{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        main{
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(2,2fr) 50px;
+            grid-template-rows: 100vh 1fr 15%;
+            row-gap: 0;
+            grid-template-areas: 
+            "about about side-nav"
+            "projects projects projects"
+            "stack stack stack";
+
+            article{
+                grid-area: about;
+                padding: 5% 20% 0 10%;
+                h1{
+                    align-items: flex-start;
+    
+                    .name{
+                        align-self: center;
+                        margin-right: 40%;
+                    }
+                }
+
+                h2{
+                    font-size: 2.5rem;
+                }
+                .blurb{
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
+                ul{
+                    display: none;
+                }
+            }
+
+            #projects{
+                grid-area: projects;
 
 
+                h2{
+                    font-size: 3rem;
+                    padding-top: 1%;
+                    padding-bottom: 5%;
+                }
+
+                ul{
+                    padding: 0;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    li{
+                        width: 45%;
+                        padding: 1%;
+                    }
+                    li:hover{
+                        opacity: 0.5;
+                    }
+                }
+
+            }
+            .techstack{
+                grid-area: stack;
+                margin: 0 4% 0 4%;
+
+                h2{
+                    font-size: 3rem;
+                }
+
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                }
+            }
+            aside{
+                grid-area: side-nav;
+                height: 100%;
+                background-color: $eggplant;
+                .icons{
+
+                    height: 50%;
+
+                    #contact{
+                        display: none;
+                    }
+                    
+                    ul{
+                        position: fixed;
+                        margin: 0;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        li{
+                            a{
+                                svg{
+                                    fill: $fuschia;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
   }
 
 

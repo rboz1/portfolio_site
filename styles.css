@@ -61,7 +61,7 @@ body header nav ul {
 
 body header nav ul li {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
+  font-size: 90%;
 }
 
 body header nav ul a {
@@ -69,12 +69,12 @@ body header nav ul a {
   color: #E0115F;
 }
 
-body header nav .logo {
-  padding-left: 5%;
+body header nav ul a:hover {
+  color: #978C9A;
 }
 
-body header nav .logo a svg #fill {
-  fill: #E0115F;
+body header nav .logo {
+  padding-left: 5%;
 }
 
 body main {
@@ -83,10 +83,10 @@ body main {
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 100vh 3fr (1fr)[2];
-      grid-template-rows: 100vh 3fr repeat(2, 1fr);
+  -ms-grid-rows: 100vh 3fr 1fr;
+      grid-template-rows: 100vh 3fr 1fr;
   row-gap: 2%;
-      grid-template-areas: "about" "projects" "stack" "foot";
+      grid-template-areas: "about" "projects" "stack";
 }
 
 body main article {
@@ -135,6 +135,7 @@ body main article .blurb {
 body main article ul {
   list-style: none;
   padding-top: 10%;
+  padding-left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,15 +146,22 @@ body main article ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 body main article ul li {
-  width: 25%;
+  width: 10%;
 }
 
 body main article ul li svg {
-  width: 45%;
+  width: 100%;
   fill: #E0115F;
+}
+
+body main article ul li .linked-icon {
+  width: px;
 }
 
 body main #projects {
@@ -223,7 +231,7 @@ body main .techstack ul {
 }
 
 body main .techstack ul li {
-  padding: 2%;
+  padding: 1%;
 }
 
 body main .techstack ul li img {
@@ -234,23 +242,20 @@ body main .techstack ul li .small-logo {
   width: 110px;
 }
 
-body main footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: foot;
+body main aside {
   -ms-flex-item-align: end;
       align-self: flex-end;
   background-color: #433145;
   margin: 0 4% 0 4%;
 }
 
-body main footer .icons h2 {
+body main aside .icons h2 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #B1A9B3;
 }
 
-body main footer .icons ul {
+body main aside .icons ul {
   list-style: none;
   padding: 0;
   display: -webkit-box;
@@ -268,18 +273,22 @@ body main footer .icons ul {
           align-items: center;
 }
 
-body main footer .icons ul svg {
+body main aside .icons ul svg {
   width: 30px;
   fill: #E0115F;
 }
 
-body main footer .icons ul .linked-icon {
-  height: 30px;
+body main aside .icons ul svg:hover {
+  fill: #E5E2E6;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+body main aside .icons ul .linked-icon {
+  width: 35px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
   body header nav ul li {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   body main article h1 {
     font-size: 5rem;
@@ -290,6 +299,12 @@ body main footer .icons ul .linked-icon {
   body main article .blurb {
     font-size: 1.5rem;
     line-height: 2.2rem;
+  }
+  body main article ul li a svg {
+    width: 75%;
+  }
+  body main article ul .linked-icon {
+    width: 50px;
   }
   body main #projects h2 {
     font-size: 2rem;
@@ -318,26 +333,69 @@ body main footer .icons ul .linked-icon {
   body main .techstack h2 {
     font-size: 2rem;
   }
-  body main footer .icons h2 {
+  body main aside .icons h2 {
     font-size: 2rem;
   }
-  body main footer .icons ul {
+  body main aside .icons ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  body main footer .icons ul li {
+  body main aside .icons ul li {
     padding: 2%;
   }
-  body main footer .icons ul li svg {
-    width: 40px;
-  }
-  body main footer .icons ul li .linked-icon {
-    height: 45px;
+  body main aside .icons ul li svg {
+    width: 35px;
   }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  body header nav ul li {
+    font-size: 1.3rem;
+  }
+  body main article h1 {
+    font-size: 6rem;
+  }
+  body main article h1 .name {
+    margin-right: 20%;
+  }
+  body main article h2 {
+    font-size: 3rem;
+  }
+  body main article .blurb {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  body main article ul li svg {
+    width: 75%;
+  }
+  body main #projects h2 {
+    font-size: 2.5rem;
+  }
+  body main .techstack h2 {
+    font-size: 2.5rem;
+  }
+  body main .techstack ul li {
+    padding: 2% 7% 2% 7%;
+  }
+  body main .techstack ul li img {
+    width: 120px;
+  }
+  body main .techstack ul li .small-logo {
+    width: 150px;
+  }
+  body main aside h2 {
+    font-size: 2.5rem;
+  }
+  body main aside .icons ul li a svg {
+    width: 50px;
+  }
+  body main aside .icons ul li a .linked-icon {
+    width: 55px;
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     display: -ms-grid;
     display: grid;
@@ -360,6 +418,9 @@ body main footer .icons ul .linked-icon {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  body header nav ul li {
+    font-size: 1rem;
+  }
   body main {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -372,13 +433,14 @@ body main footer .icons ul .linked-icon {
     -ms-grid-rows: 100vh 1fr 15%;
         grid-template-rows: 100vh 1fr 15%;
     row-gap: 0;
-        grid-template-areas: "about . side-nav" "projects projects projects" "stack stack stack";
+        grid-template-areas: "about about side-nav" "projects projects projects" "stack stack stack";
   }
   body main article {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-area: about;
-    padding: 5% 0 0 10%;
+    padding: 5% 20% 0 10%;
   }
   body main article h1 {
     -webkit-box-align: start;
@@ -389,10 +451,10 @@ body main footer .icons ul .linked-icon {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    margin-right: 10%;
+    margin-right: 40%;
   }
   body main article h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   body main article .blurb {
     font-size: 1.5rem;
@@ -462,20 +524,20 @@ body main footer .icons ul .linked-icon {
         -ms-flex-align: center;
             align-items: center;
   }
-  body main footer {
+  body main aside {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: side-nav;
     height: 100%;
     background-color: #3A263D;
   }
-  body main footer .icons {
+  body main aside .icons {
     height: 50%;
   }
-  body main footer .icons #contact {
+  body main aside .icons #contact {
     display: none;
   }
-  body main footer .icons ul {
+  body main aside .icons ul {
     position: fixed;
     margin: 0;
     height: 100%;
@@ -487,7 +549,325 @@ body main footer .icons ul .linked-icon {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body main footer .icons ul li a svg {
+  body main aside .icons ul li a svg {
+    fill: #E0115F;
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 1367px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr, 3fr;
+        grid-template-columns: 1fr, 3fr;
+    -ms-grid-rows: 1fr, 3fr;
+        grid-template-rows: 1fr, 3fr;
+        grid-template-areas: "head head"  "main main";
+  }
+  body header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: head;
+  }
+  body header nav .logo {
+    padding-left: 2%;
+  }
+  body header nav ul {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body header nav ul li {
+    font-size: 1rem;
+  }
+  body main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (2fr)[2] 50px;
+        grid-template-columns: repeat(2, 2fr) 50px;
+    -ms-grid-rows: 100vh 1fr 15%;
+        grid-template-rows: 100vh 1fr 15%;
+    row-gap: 0;
+        grid-template-areas: "about about side-nav" "projects projects projects" "stack stack stack";
+  }
+  body main article {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: about;
+    padding: 5% 20% 0 10%;
+  }
+  body main article h1 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body main article h1 .name {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 40%;
+  }
+  body main article h2 {
+    font-size: 2.5rem;
+  }
+  body main article .blurb {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  body main article ul {
+    display: none;
+  }
+  body main #projects {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: projects;
+  }
+  body main #projects h2 {
+    font-size: 3rem;
+    padding-top: 1%;
+    padding-bottom: 5%;
+  }
+  body main #projects ul {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main #projects ul li {
+    width: 45%;
+    padding: 1%;
+  }
+  body main #projects ul li:hover {
+    opacity: 0.5;
+  }
+  body main .techstack {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: stack;
+    margin: 0 4% 0 4%;
+  }
+  body main .techstack h2 {
+    font-size: 3rem;
+  }
+  body main .techstack ul {
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main aside {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: side-nav;
+    height: 100%;
+    background-color: #3A263D;
+  }
+  body main aside .icons {
+    height: 50%;
+  }
+  body main aside .icons #contact {
+    display: none;
+  }
+  body main aside .icons ul {
+    position: fixed;
+    margin: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main aside .icons ul li a svg {
+    fill: #E0115F;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr, 3fr;
+        grid-template-columns: 1fr, 3fr;
+    -ms-grid-rows: 1fr, 3fr;
+        grid-template-rows: 1fr, 3fr;
+        grid-template-areas: "head head"  "main main";
+  }
+  body header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: head;
+  }
+  body header nav .logo {
+    padding-left: 2%;
+  }
+  body header nav ul {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body header nav ul li {
+    font-size: 1rem;
+  }
+  body main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (2fr)[2] 50px;
+        grid-template-columns: repeat(2, 2fr) 50px;
+    -ms-grid-rows: 100vh 1fr 15%;
+        grid-template-rows: 100vh 1fr 15%;
+    row-gap: 0;
+        grid-template-areas: "about about side-nav" "projects projects projects" "stack stack stack";
+  }
+  body main article {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: about;
+    padding: 5% 20% 0 10%;
+  }
+  body main article h1 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body main article h1 .name {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 40%;
+  }
+  body main article h2 {
+    font-size: 2.5rem;
+  }
+  body main article .blurb {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  body main article ul {
+    display: none;
+  }
+  body main #projects {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: projects;
+  }
+  body main #projects h2 {
+    font-size: 3rem;
+    padding-top: 1%;
+    padding-bottom: 5%;
+  }
+  body main #projects ul {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main #projects ul li {
+    width: 45%;
+    padding: 1%;
+  }
+  body main #projects ul li:hover {
+    opacity: 0.5;
+  }
+  body main .techstack {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: stack;
+    margin: 0 4% 0 4%;
+  }
+  body main .techstack h2 {
+    font-size: 3rem;
+  }
+  body main .techstack ul {
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main aside {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: side-nav;
+    height: 100%;
+    background-color: #3A263D;
+  }
+  body main aside .icons {
+    height: 50%;
+  }
+  body main aside .icons #contact {
+    display: none;
+  }
+  body main aside .icons ul {
+    position: fixed;
+    margin: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main aside .icons ul li a svg {
     fill: #E0115F;
   }
 }
