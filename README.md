@@ -23,7 +23,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href=https://rboz1.github.io/portfolio_site/">
+  <a href="https://rboz1.github.io/portfolio_site/">
     <img src="images/big_logo.svg" alt="Logo" width="100" height="100">
   </a>
 
