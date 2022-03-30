@@ -195,6 +195,10 @@ body main #projects ul li img {
   width: 100%;
 }
 
+body main #projects ul .description {
+  display: none;
+}
+
 body main .techstack {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -528,9 +532,25 @@ body main aside .icons ul .linked-icon {
   body main #projects ul li {
     width: 45%;
     padding: 1%;
+    color: #B1A9B3;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5rem;
   }
-  body main #projects ul li:hover {
+  body main #projects ul .image:hover {
     opacity: 0.5;
+  }
+  body main #projects ul div a {
+    color: #E0115F;
+    border: 1px solid #E0115F;
+    text-decoration: none;
+    padding: 1%;
+  }
+  body main #projects ul div a:hover {
+    color: #E5E2E6;
+    border: 1px solid #E5E2E6;
+  }
+  body main #projects ul .description {
+    display: block;
   }
   body main .techstack {
     -ms-grid-row: 3;
@@ -690,9 +710,25 @@ body main aside .icons ul .linked-icon {
   body main #projects ul li {
     width: 45%;
     padding: 1%;
+    color: #B1A9B3;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5rem;
   }
-  body main #projects ul li:hover {
+  body main #projects ul .image:hover {
     opacity: 0.5;
+  }
+  body main #projects ul div a {
+    color: #E0115F;
+    border: 1px solid #E0115F;
+    text-decoration: none;
+    padding: 1%;
+  }
+  body main #projects ul div a:hover {
+    color: #E5E2E6;
+    border: 1px solid #E5E2E6;
+  }
+  body main #projects ul .description {
+    display: block;
   }
   body main .techstack {
     -ms-grid-row: 3;
@@ -850,9 +886,25 @@ body main aside .icons ul .linked-icon {
   body main #projects ul li {
     width: 45%;
     padding: 1%;
+    color: #B1A9B3;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5rem;
   }
   body main #projects ul li:hover {
     opacity: 0.5;
+  }
+  body main #projects ul div a {
+    color: #E0115F;
+    border: 1px solid #E0115F;
+    text-decoration: none;
+    padding: 1%;
+  }
+  body main #projects ul div a:hover {
+    color: #E5E2E6;
+    border: 1px solid #E5E2E6;
+  }
+  body main #projects ul .description {
+    display: block;
   }
   body main .techstack {
     -ms-grid-row: 3;
@@ -1010,9 +1062,25 @@ body main aside .icons ul .linked-icon {
   body main #projects ul li {
     width: 45%;
     padding: 1%;
+    color: #B1A9B3;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5rem;
   }
   body main #projects ul li:hover {
     opacity: 0.5;
+  }
+  body main #projects ul div a {
+    color: #E0115F;
+    border: 1px solid #E0115F;
+    text-decoration: none;
+    padding: 1%;
+  }
+  body main #projects ul div a:hover {
+    color: #E5E2E6;
+    border: 1px solid #E5E2E6;
+  }
+  body main #projects ul .description {
+    display: block;
   }
   body main .techstack {
     -ms-grid-row: 3;

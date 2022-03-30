@@ -146,6 +146,9 @@ body{
                         width: 100%;
                     }
                 }
+                .description{
+                    display: none;
+                }
             }
         }
         .techstack{
@@ -545,9 +548,28 @@ and (-webkit-min-device-pixel-ratio: 1){
                     li{
                         width: 45%;
                         padding: 1%;
+                        color: $light-white;
+                        font-family: $body-font;
+                        line-height: 1.5rem;
                     }
-                    li:hover{
+                    .image:hover{
                         opacity: 0.5;
+                    }
+
+                    div{
+                        a{
+                            color: $fuschia;
+                            border: 1px solid $fuschia;
+                            text-decoration: none;
+                            padding: 1%;
+                        }
+                        a:hover{
+                            color: $lighest-white;
+                            border: 1px solid $lighest-white;
+                        }
+                    }
+                    .description{
+                        display: block;
                     }
                 }
 
@@ -694,9 +716,27 @@ and (-webkit-min-device-pixel-ratio: 1){
                     li{
                         width: 45%;
                         padding: 1%;
+                        color: $light-white;
+                        font-family: $body-font;
+                        line-height: 1.5rem;
                     }
-                    li:hover{
+                    .image:hover{
                         opacity: 0.5;
+                    }
+                    div{
+                        a{
+                            color: $fuschia;
+                            border: 1px solid $fuschia;
+                            text-decoration: none;
+                            padding: 1%;
+                        }
+                        a:hover{
+                            color: $lighest-white;
+                            border: 1px solid $lighest-white;
+                        }
+                    }
+                    .description{
+                        display: block;
                     }
                 }
 
@@ -837,9 +877,27 @@ and (-webkit-min-device-pixel-ratio: 1){
                     li{
                         width: 45%;
                         padding: 1%;
+                        color: $light-white;
+                        font-family: $body-font;
+                        line-height: 1.5rem;
                     }
                     li:hover{
                         opacity: 0.5;
+                    }
+                    div{
+                        a{
+                            color: $fuschia;
+                            border: 1px solid $fuschia;
+                            text-decoration: none;
+                            padding: 1%;
+                        }
+                        a:hover{
+                            color: $lighest-white;
+                            border: 1px solid $lighest-white;
+                        }
+                    }
+                    .description{
+                        display: block;
                     }
                 }
 
@@ -977,9 +1035,27 @@ and (-webkit-min-device-pixel-ratio: 1){
                     li{
                         width: 45%;
                         padding: 1%;
+                        color: $light-white;
+                        font-family: $body-font;
+                        line-height: 1.5rem;
                     }
                     li:hover{
                         opacity: 0.5;
+                    }
+                    div{
+                        a{
+                            color: $fuschia;
+                            border: 1px solid $fuschia;
+                            text-decoration: none;
+                            padding: 1%;
+                        }
+                        a:hover{
+                            color: $lighest-white;
+                            border: 1px solid $lighest-white;
+                        }
+                    }
+                    .description{
+                        display: block;
                     }
                 }
 
