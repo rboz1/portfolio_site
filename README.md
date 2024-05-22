@@ -30,7 +30,7 @@
   <h3 align="center">Portfolio Site</h3>
 
   <p align="center">
-    My first website to display selected portfolio projects.
+    My website to display selected portfolio projects.
   </p>
 </div>
 
@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://rboz1.github.io/portfolio_site/)
+<img width="1436" alt="portfolio_screenshot" src="https://github.com/rboz1/portfolio_site/assets/63253421/9d88a2c6-2e44-4a36-9792-2fd00b38621d">
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
