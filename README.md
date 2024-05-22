@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img width="1436" alt="portfolio_screenshot" src="https://github.com/rboz1/portfolio_site/assets/63253421/9d88a2c6-2e44-4a36-9792-2fd00b38621d">
+<img width="1436" alt="screenshot_portfolio" src="https://github.com/rboz1/portfolio_site/assets/63253421/af2b4e6a-da10-4e75-ad4e-e1d0da6fe976">
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
